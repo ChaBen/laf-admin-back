@@ -1,0 +1,34 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 50,
+    "max": 100
+  },
+  "authentication": {
+    "secret": "6a37e9a9e2c54563aa84cbcc48c59e67f8b76d612732693c3c5a61013d553fcf7272e5551e4b17bd50e47712a89eb5a9ea28ca76b1c2e1f4d4e5e3b8a8f417a9a220ca91422c95885b4f9671c8a45a3f315cca7d91dee12e230728a599f464d8aa18107df8ff3a10c5638131b61256f3cbcf490adcde49348baf1cdd5c69dd5f2cd832536e11456872781c7c60ae9c7a2dda07c4bdc1bc9b1f6d5f9e759a8e1db6d3c95f8bca6bcce19cf678e7ebd0902ac1f26fccb4ff9b9581ee09a2ddb0c52daf37c0cdc9c9d7950f58233346db2fde7274554f9c2f1f16e3b75f0854825a86fabbec6c078fb92e16855fd8d0d296916a38e82f19eb124fcda5eebba624ae",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "http://localhost:9528/",
+      "subject": "auth",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  },
+  "mysql": "mysql://root:@localhost:3306/crwm"
+}
